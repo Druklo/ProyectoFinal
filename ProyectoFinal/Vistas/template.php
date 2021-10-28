@@ -16,13 +16,10 @@
         include_once "Navegacion.php";
     ?>
 
-
-    <!-- Contenedor donde mostraremos el contenido de las diferentes paginas -->
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <?php
-                    //A partir del metodo obtener paginas del controladore iremos cambiando la pagina
                     $controlador = new ControladorDePaginas();
                     $controlador -> obtenerPagina();
                 ?>
