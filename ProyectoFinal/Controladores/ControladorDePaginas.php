@@ -4,9 +4,9 @@
 
     class ControladorPaginas
     {
-
-        public function plantilla(){
-            include_once "Vistas/template.php";
+        public function plantilla()
+        {
+        include_once "Vistas/template.php";
         }
 
         public function obtenerPagina()
@@ -14,7 +14,6 @@
 
             if( isset($_GET['accion']) )
             {
-                
                 $accion = $_GET['accion'];
                 
                 return $this->$accion();
@@ -36,12 +35,12 @@
             {
                 $marca = $_POST['marca'];
                 $modelo = $_POST['modelo'];
-                $anio = $_POST['año'];
+                $anio = $_POST['anio'];
                 $precio = $_POST['precio'];
                 
                 Vehiculo::registrar($marca, $modelo, $anio, $precio);
             }
-            return include_once "Vistas/Productos/RegistrarAuto.php";
+            return include_once "Vistas/Vehiculo/RegistrarAuto.php";
         }
 
         private function editar(){
@@ -50,7 +49,8 @@
                 $vehiculo =  Vehiculo::buscar($_GET['id']);
             }
 
-            if($_POST){
+            if($_POST)
+            {
                 print_r($_POST);
                 $id = $_POST['id'];
                 $marca = $_POST['marca'];
@@ -67,8 +67,10 @@
             
         }
 
-        private function borrar(){
-            if(isset($_GET['id'])){
+        private function borrar()
+        {
+            if(isset($_GET['id']))
+            {
                 Vehiculo::borrar($_GET['id']);
 
                 header("Location:./?accion=inicio");
