@@ -1,5 +1,3 @@
-7 lines (7 sloc)  404 Bytes
-   
 <nav class="navbar navbar-expand navbar-light bg-light">
     <div class="nav navbar-nav">
         <a class="nav-item nav-link active" href="index.php?accion=inicio">Inicio<span class="visually-hidden">(current)</span></a>
