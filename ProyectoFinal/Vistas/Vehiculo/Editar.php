@@ -3,7 +3,7 @@
             Buscar Vehiculo por id
         <div class="mb-3">
             <input type="text"
-            class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Ingrese el id de producto">
+            class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Ingrese el id de vehiculo">
         </div>
         <input name="" id="" class="btn btn-success" type="submit" value="Buscar">
     </div>
@@ -19,7 +19,7 @@
             <div class="mb-3">
               <label for="id" class="form-label">Id: </label>
               <input type="text"
-                class="form-control" name="id" value="<?php echo $producto -> id ?>" readonly id="id" aria-describedby="helpId" >
+                class="form-control" name="id" value="<?php echo $vehiculo -> id ?>" readonly id="id" aria-describedby="helpId" >
                 <div class="mb-3">
               <label for="marca" class="form-label">Marca: </label>
               <input type="text"
@@ -40,7 +40,7 @@
               <input type="text"
                 class="form-control" name="precio" id="precio" aria-describedby="helpId" placeholder="Precio del vehiculo">
             </div>
-            <input name="" id="" class="btn btn-success" type="submit" value="Editar producto">
+            <input name="" id="" class="btn btn-success" type="submit" value="Editar vehiculo">
             <a href="index.php?accion=inicio" class="btn btn-primary">Cancelar</a>
         </form>
     </div>

@@ -24,7 +24,7 @@
 
         private function inicio()
         {
-            $productos = Vehiculo::consultar();
+            $vehiculos = Vehiculo::consultar();
 
             return include_once "Vistas/Vehiculo/Inicio.php";
         }

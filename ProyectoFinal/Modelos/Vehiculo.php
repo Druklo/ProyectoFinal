@@ -101,7 +101,7 @@ class Vehiculo
             $conexion = BD::crearConexion();
 
             // Codigo SQL para insertar datos en la tabla personas 
-            $query = "INSERT INTO productos (Nombre, Precio, Cantidad) values ('$marca', '$modelo', '$anio', '$precio')";
+            $query = "INSERT INTO vehiculos (Marca, Modelo, Año, Precio) values ('$marca', '$modelo', '$anio', '$precio')";
             $exito = mysqli_query($conexion, $query);
             
             if($exito){
