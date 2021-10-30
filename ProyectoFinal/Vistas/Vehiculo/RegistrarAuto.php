@@ -17,11 +17,11 @@
             <div class="mb-3">
               <label for="anio" class="form-label">Año: </label>
               <input type="number"
-                class="form-control" name="anio" id="anio" aria-describedby="helpId" placeholder="Precio del vehiculo">
+                class="form-control" name="anio" id="anio" aria-describedby="helpId" placeholder="Año del vehiculo">
             </div>
             <div class="mb-3">
               <label for="precio" class="form-label">Precio: </label>
-              <input type="text"
+              <input type="number"
                 class="form-control" name="precio" id="precio" aria-describedby="helpId" placeholder="Precio del vehiculo">
             </div>
             <input name="" id="" class="btn btn-success" type="submit" value="Agregar producto">
