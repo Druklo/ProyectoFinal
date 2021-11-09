@@ -100,14 +100,16 @@ class Vehiculo
             
             $conexion = BD::crearConexion();
 
-            // Codigo SQL para insertar datos en la tabla personas 
+            // Codigo SQL para insertar datos en la tabla vehiculos 
             $query = "INSERT INTO vehiculos (Marca, Modelo, Año, Precio) values ('$marca', '$modelo', '$anio', '$precio')";
             $exito = mysqli_query($conexion, $query);
             
-            if($exito){
+            if($exito)
+            {
                 echo "Se guardaron correctamente los datos";
             }
-            else{
+            else
+            {
                 echo "Hubo un error al guardar los datos".mysqli_error($conexion);
             }
         }
