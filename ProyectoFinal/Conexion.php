@@ -1,10 +1,10 @@
 <?php
     class BD
     {
-        private $host = "localhost";		//Nombre del host o server al que nos conectamos
-        private $basededatos = "test";	//Nombre de la base de datos
-        private $nombreusuario = "root";  	//Nombre de usuario de la BD
-        private $contraseña = "";   	//Contraseña de la BD
+        private $host = "localhost";
+        private $basededatos = "test";
+        private $nombreusuario = "root";
+        private $contraseña = "";
         private $tabla_db1 = "vehiculos";
         private $conexion;
 
@@ -12,7 +12,8 @@
         {
             $conexion = mysqli_connect($this->host, $this->nombreusuario, $this->contraseña, $this->basededatos);
 
-            if (!$conexion) {
+            if (!$conexion) 
+            {
                 die("La conexion fallo: " . mysqli_connect_error());
             }
             else
@@ -21,32 +22,40 @@
             }
         }
         
-        public function cerrarConexion(){
+        public function cerrarConexion()
+        {
             mysqli_close($this->conexion);
         }
 
-        public function guardarVehiculo(Vehiculo $user){
+        public function guardarVehiculo(Vehiculo $user)
+        {
             $query = "INSERT INTO $this->tabla_db1 (ID, Marca, Modelo, Año, Precio) 
                       VALUES ('{$user->Id}', '{$user->Marca}', '{$user->Modelo}', '{$user->Precio}')";
             
             $exito = mysqli_query($this->conexion, $query);
 
-            if($exito){
+            if($exito)
+            {
                 echo "Se registro correctamente el vehiculo<br>";
             }
-            else{
+            else
+            {
                 echo "Hubo un error al registrar el vehiculo: ".mysqli_error($this->conexion);
             }
 
         }
 
         
-        public function obtenerVehiculoPorId($id){
+        public function obtenerVehiculoPorId($id)
+        {
             $consulta = "SELECT * FROM $this->tabla_db1 WHERE Id = '$id'";
-            if ($resultado = mysqli_query($this->conexion, $consulta)) {
-                if (mysqli_num_rows($resultado) > 0){
+            if ($resultado = mysqli_query($this->conexion, $consulta)) 
+            {
+                if (mysqli_num_rows($resultado) > 0)
+                {
                     //Obtener la lista de vehiculos 
-                    while ($vehiculo = $resultado->fetch_object()) {
+                    while ($vehiculo = $resultado->fetch_object()) 
+                    {
 
                         $automovil = new Vehiculo($vehiculo->Id, $vehiculo->Marca, $vehiculo->Modelo, $vehiculo->Anio, $vehiculo->Precio);
                         return $automovil;
@@ -57,20 +66,22 @@
                     echo "No existe ningun vehiculo con ese Id";
                 }
             }
-            else{
+            else
+            {
                 echo "Hubo un error al obtener vehiculo:  ".mysqli_error($this->conexion);
             }
 
 
         }
 
-        public function obtenerAutosPorMarca($marca){
+        public function obtenerAutosPorMarca($marca)
+        {
             $vehiculos = [];
             $consulta = "SELECT * FROM $this->tabla_db1 WHERE Marca LIKE '%$marca%'";
-            if ($resultado = mysqli_query($this->conexion, $consulta)) {
+            if ($resultado = mysqli_query($this->conexion, $consulta)) 
+            {
                 //Obtener la lista de usuarios 
                 while ($vehiculo = $resultado->fetch_object()) {
-
                     $vehiculos[] = new Vehiculo($vehiculo->Id, $vehiculo->Marca, $vehiculo->Modelo, $vehiculo->Anio, $vehiculo->Precio);
                 }
             }
@@ -96,10 +107,12 @@
       
                 $exito = mysqli_query($this->conexion, $query);
 
-                if($exito){
+                if($exito)
+                {
                     echo "Se actualizo correctamente el usuario<br>";
                 }
-                else{
+                else
+                {
                     echo "Hubo un error al actualizar el usuario: ".mysqli_error($this->conexion);
                 }
             }
@@ -115,10 +128,12 @@
 
                 $exito = mysqli_query($this->conexion, $query);
 
-                if($exito){
+                if($exito)
+                {
                     echo "Se elimino correctamente el vehiculo<br>";
                 }
-                else{
+                else
+                {
                     echo "Hubo un error al eliminar el vehiculo: ".mysqli_error($this->conexion);
                 }
             }
