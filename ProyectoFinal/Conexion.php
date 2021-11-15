@@ -1,10 +1,10 @@
 <?php
     class BD
     {
-        private $host = "localhost";		//Nombre del host o server al que nos conectamos
+        private $host = "localhost";	//Nombre del host o server al que nos conectamos
         private $basededatos = "vehiculos";	//Nombre de la base de datos
-        private $nombreusuario = "root";  	//Nombre de usuario de la BD
-        private $contraseña = "";   	//Contraseña de la BD
+        private $nombreusuario = "root";  //Nombre de usuario de la BD
+        private $contraseña = "";   //Contraseña de la BD
         private $tabla_db1 = "automovil";
         private static $conexion= NULL;
 
@@ -44,9 +44,10 @@
             mysqli_close($this->conexion);
         }
 
-        public function guardarVehiculo(Vehiculo $vehiculo){
+        public function guardarVehiculo(Vehiculo $vehiculo)
+        {
             $query = "INSERT INTO $this->tabla_db1 (ID, Marca, Modelo, Año, Precio) 
-                      VALUES ('{$vehiculo->Id}', '{$vehiculo->Marca}', '{$vehiculo->Modelo}', '{$vehiculo->Precio}')";
+                      VALUES ('{$vehiculo->Id}', '{$vehiculo->Marca}', '{$vehiculo->Modelo}', '{$vehiculo->Anio}' '{$vehiculo->Precio}')";
             
             $exito = mysqli_query($this->conexion, $query);
 
@@ -62,8 +63,10 @@
         }
 
         
-        public function obtenerVehiculoPorId($id){
+        public function obtenerVehiculoPorId($id)
+        {
             $consulta = "SELECT * FROM $this->tabla_db1 WHERE ID = '$id'";
+            
             if ($resultado = mysqli_query($this->conexion, $consulta)) 
             {
                 if (mysqli_num_rows($resultado) > 0)
@@ -89,9 +92,11 @@
 
         }
 
-        public function obtenerAutosPorMarca($marca){
+        public function obtenerAutosPorMarca($marca)
+        {
             $vehiculos = [];
             $consulta = "SELECT * FROM $this->tabla_db1 WHERE Marca LIKE '%$marca%'";
+            
             if ($resultado = mysqli_query($this->conexion, $consulta)) 
             {
                 //Obtener la lista de usuarios 
