@@ -1,18 +1,18 @@
 <?php
     class BD
     {
-        private $host = "localhost";
-        private $basededatos = "test";
-        private $nombreusuario = "root";
-        private $contraseña = "";
-        private $tabla_db1 = "vehiculos";
-        private $conexion;
+        private $host = "localhost";		//Nombre del host o server al que nos conectamos
+        private $basededatos = "vehiculos";	//Nombre de la base de datos
+        private $nombreusuario = "root";  	//Nombre de usuario de la BD
+        private $contraseña = "";   	//Contraseña de la BD
+        private $tabla_db1 = "automovil";
+        private static $conexion= NULL;
 
         public function __construct()
         {
             $conexion = mysqli_connect($this->host, $this->nombreusuario, $this->contraseña, $this->basededatos);
 
-            if (!$conexion) 
+            if (!$conexion)
             {
                 die("La conexion fallo: " . mysqli_connect_error());
             }
@@ -21,16 +21,32 @@
                 $this->conexion = $conexion;
             }
         }
+
+        public static function crearConexion()
+        {
+
+            if(!isset( self::$conexion))
+            {
+
+                self::$conexion = mysqli_connect("localhost","root", "", "vehiculos");
+
+                if (!self::$conexion) 
+                {
+                    die("La conexion fallo: " . mysqli_connect_error());
+                }
+            }
+
+            return self::$conexion;
+        }
         
         public function cerrarConexion()
         {
             mysqli_close($this->conexion);
         }
 
-        public function guardarVehiculo(Vehiculo $user)
-        {
+        public function guardarVehiculo(Vehiculo $vehiculo){
             $query = "INSERT INTO $this->tabla_db1 (ID, Marca, Modelo, Año, Precio) 
-                      VALUES ('{$user->Id}', '{$user->Marca}', '{$user->Modelo}', '{$user->Precio}')";
+                      VALUES ('{$vehiculo->Id}', '{$vehiculo->Marca}', '{$vehiculo->Modelo}', '{$vehiculo->Precio}')";
             
             $exito = mysqli_query($this->conexion, $query);
 
@@ -46,8 +62,7 @@
         }
 
         
-        public function obtenerVehiculoPorId($id)
-        {
+        public function obtenerVehiculoPorId($id){
             $consulta = "SELECT * FROM $this->tabla_db1 WHERE Id = '$id'";
             if ($resultado = mysqli_query($this->conexion, $consulta)) 
             {
@@ -74,18 +89,20 @@
 
         }
 
-        public function obtenerAutosPorMarca($marca)
-        {
+        public function obtenerAutosPorMarca($marca){
             $vehiculos = [];
             $consulta = "SELECT * FROM $this->tabla_db1 WHERE Marca LIKE '%$marca%'";
             if ($resultado = mysqli_query($this->conexion, $consulta)) 
             {
                 //Obtener la lista de usuarios 
-                while ($vehiculo = $resultado->fetch_object()) {
+                while ($vehiculo = $resultado->fetch_object()) 
+                {
+
                     $vehiculos[] = new Vehiculo($vehiculo->Id, $vehiculo->Marca, $vehiculo->Modelo, $vehiculo->Anio, $vehiculo->Precio);
                 }
             }
-            else{
+            else
+            {
                 echo "Hubo un error al obtener los vehiculos:  ".mysqli_error($this->conexion);
             }
 
@@ -141,21 +158,6 @@
 
         ##private static $conexion=NULL;
 
-        public static function crearConexion()
-        {
-
-            if(!isset( self::$conexion))
-            {
-
-                self::$conexion = mysqli_connect("localhost","root", "", "vehiculos");
-
-                if (!self::$conexion) 
-                {
-                    die("La conexion fallo: " . mysqli_connect_error());
-                }
-            }
-
-            return self::$conexion;
-        }
+       
     }
 ?>
