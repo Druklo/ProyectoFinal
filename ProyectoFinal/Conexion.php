@@ -63,7 +63,7 @@
 
         
         public function obtenerVehiculoPorId($id){
-            $consulta = "SELECT * FROM $this->tabla_db1 WHERE Id = '$id'";
+            $consulta = "SELECT * FROM $this->tabla_db1 WHERE ID = '$id'";
             if ($resultado = mysqli_query($this->conexion, $consulta)) 
             {
                 if (mysqli_num_rows($resultado) > 0)
@@ -116,11 +116,11 @@
             if($vehiculoDB)
             {
                 $query = "UPDATE $this->tabla_db1 SET
-                Marca = '$vehiculo->nombre',
-                Modelo =  '$vehiculo->direccion',
-                Año = '$vehiculo->telefono',
+                Marca = '$vehiculo->Marca',
+                Modelo =  '$vehiculo->Modelo',
+                Año = '$vehiculo->Anio',
                 Precio = '$vehiculo->Precio'
-                WHERE Id ='{$vehiculo->Id}'";
+                WHERE ID ='{$vehiculo->Id}'";
       
                 $exito = mysqli_query($this->conexion, $query);
 
@@ -154,11 +154,6 @@
                     echo "Hubo un error al eliminar el vehiculo: ".mysqli_error($this->conexion);
                 }
             }
-        }
-
-        ##private static $conexion=NULL;
-
-       
+        } 
     }
 ?>
-

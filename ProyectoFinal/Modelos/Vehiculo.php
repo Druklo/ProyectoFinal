@@ -30,7 +30,7 @@ class Vehiculo
                 while ($vehiculo= $resultado->fetch_object())
                 {
 
-                    $listaVehiculos[] = new Vehiculo($vehiculo->Id, $vehiculo->Marca, $vehiculo->Modelo,$vehiculo->Anio, $vehiculo->Precio);
+                    $listaVehiculos[] = new Vehiculo($vehiculo->Id, $vehiculo->Marca, $vehiculo->Modelo, $vehiculo->Anio, $vehiculo->Precio);
                 }
             }
 
@@ -40,7 +40,7 @@ class Vehiculo
         public static function borrar($id)
         {
             $conexion = BD::crearConexion();
-            $query = "DELETE FROM automovil WHERE id = '$id'";
+            $query = "DELETE FROM automovil WHERE ID = '$id'";
             $exito = mysqli_query($conexion, $query);
 
             if(!$exito)
@@ -57,7 +57,7 @@ class Vehiculo
                                 Modelo='$modelo', 
                                 Año='$anio', 
                                 Precio='$precio'
-                                WHERE id = '$id'";
+                                WHERE ID = '$id'";
             $exito = mysqli_query($conexion, $query);
 
             if(!$exito)
@@ -71,7 +71,7 @@ class Vehiculo
 
             $conexion = BD::crearConexion();
 
-            $query = "SELECT * FROM automovil WHERE id = '$id' ";
+            $query = "SELECT * FROM automovil WHERE ID = '$id' ";
 
             $resultado = mysqli_query($conexion, $query);
 
@@ -101,7 +101,7 @@ class Vehiculo
             $conexion = BD::crearConexion();
 
             // Codigo SQL para insertar datos en la tabla personas 
-            $query = "INSERT INTO automovil (Marca, Modelo, Año, Precio) Values ('$marca', '$modelo', '$anio', '$precio')";
+            $query = "INSERT INTO automovil (Marca, Modelo, Año, Precio) values ('$marca', '$modelo', '$anio', '$precio')";
             $exito = mysqli_query($conexion, $query);
             
             if($exito)

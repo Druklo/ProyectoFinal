@@ -6,7 +6,7 @@
     {
         public function plantilla()
         {
-        include_once "Vistas/template.php";
+        include_once "Vistas/Template.php";
         }
 
         public function obtenerPagina()
@@ -33,6 +33,7 @@
 
             if($_POST)
             {
+                //$id = $_POST ['ID'];
                 $marca = $_POST['marca'];
                 $modelo = $_POST['modelo'];
                 $anio = $_POST['anio'];
@@ -55,7 +56,7 @@
                 $id = $_POST['id'];
                 $marca = $_POST['marca'];
                 $modelo = $_POST['modelo'];
-                $anio = $_POST['año'];
+                $anio = $_POST['anio'];
                 $precio = $_POST['precio'];
 
                 Vehiculo::editar($id, $marca, $modelo, $anio, $precio);
