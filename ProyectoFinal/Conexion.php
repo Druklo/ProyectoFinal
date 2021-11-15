@@ -47,7 +47,7 @@
         public function guardarVehiculo(Vehiculo $vehiculo)
         {
             $query = "INSERT INTO $this->tabla_db1 (ID, Marca, Modelo, Año, Precio) 
-                      VALUES ('{$vehiculo->Id}', '{$vehiculo->Marca}', '{$vehiculo->Modelo}', '{$vehiculo->Anio}' '{$vehiculo->Precio}')";
+                      VALUES ('{$vehiculo->Id}', '{$vehiculo->Marca}', '{$vehiculo->Modelo}', '{$vehiculo->Anio}', '{$vehiculo->Precio}')";
             
             $exito = mysqli_query($this->conexion, $query);
 
