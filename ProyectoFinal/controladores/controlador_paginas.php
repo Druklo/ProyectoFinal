@@ -32,11 +32,11 @@
         private function registrar(){
             //Verificamos que los datos se hallan enviado por el metodo POST
             if($_POST){
-                $nombre = $_POST['marca'];
-                $cantidad = $_POST['modelo'];
-                $año = $_POST['año'];
-                $precio = $_POST['precio'];
-                Vehiculo::registrar($nombre, $cantidad, $año, $precio);
+                $Marca = $_POST['Marca'];
+                $Modelo = $_POST['Modelo'];
+                $Año = $_POST['Año'];
+                $Precio = $_POST['Precio'];
+                Vehiculo::registrar($Marca, $Modelo, $Año, $Precio);
             }
             return include_once "vistas/producto/registrar.php";
         }
@@ -49,11 +49,11 @@
             if($_POST){
                 print_r($_POST);
                 $Id = $_POST['ID'];
-                $Nombre = $_POST['Marca'];
-                $Cantidad = $_POST['Modelo'];
+                $Marca = $_POST['Marca'];
+                $Modelo = $_POST['Modelo'];
                 $Año = $_POST['Año'];
                 $Precio = $_POST['Precio'];
-                Vehiculo::editar($Id, $Nombre, $Cantidad, $Año, $Precio);
+                Vehiculo::editar($Id, $Marca, $Modelo, $Año, $Precio);
                 header("Location:./?accion=inicio");
             }
 

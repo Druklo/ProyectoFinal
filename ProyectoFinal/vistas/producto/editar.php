@@ -3,9 +3,9 @@
             Buscar por ID
         <div class="mb-3">
             <input type="text"
-            class="form-control" name="ID" id="ID" aria-describedby="helpId" placeholder="Ingrese el id de vehiculo">
+            class="form-control" name="id" id="id" aria-describedby="helpId" placeholder="Ingrese el id de vehiculo">
         </div>
-        <input name="" id="" class="btn btn-success" type="submit" value="Buscar">
+        <input name="" id="" class="btn btn-success" type="submit" value="buscar">
     </div>
 </div>
 
@@ -17,9 +17,9 @@
         <form action="" method="post">
 
             <div class="mb-3">
-              <label for="ID" class="form-label">ID: </label>
-              <input type="text" class="form-control" name="ID" 
-              value="<?php if (!empty($automovil)) {echo $automovil -> ID ;} ?>" readonly ID="ID" aria-describedby="helpId" >
+              <label for="id" class="form-label">ID: </label>
+              <input type="text" class="form-control" name="id" 
+              value="<?php if (!empty($automovil)) {echo $automovil -> ID ;} ?>" readonly ID="id" aria-describedby="helpId" >
             </div>
 
             <div class="mb-3">

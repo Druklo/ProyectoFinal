@@ -44,11 +44,12 @@
             }
         }
 
-        public static function editar($Id, $Nombre, $Cantidad, $Precio){
+        public static function editar($Id, $Marca,$Modelo, $Año, $Precio){
             $conexion = BD::crearConexion();
             $query = "UPDATE automoviles SET 
-                                Nombre ='$Nombre', 
-                                Cantidad='$Cantidad', 
+                                Nombre ='$Marca', 
+                                Cantidad='$Modelo', 
+                                Año='$Año',
                                 Precio='$Precio'  
                                 WHERE ID = '$Id'";
             $exito = mysqli_query($conexion, $query);
@@ -71,7 +72,8 @@
             $resultado = mysqli_query($conexion, $query);
 
             //Vericamos que se halla ejecutado correctamente la consulta
-            if($resultado){
+            if($resultado)
+            {
                 //Verificamos que halla encontrado un resultado
                 if (mysqli_num_rows($resultado) > 0)
                 {
@@ -79,7 +81,7 @@
                     $automovil = $resultado->fetch_object();
 
                     //Devolvemos un objeto del tipo Producto
-                    return new Vehiculo($automovil->ID, $automovil->Marca, $automovil->Modelo, $automovil->Año, $automovil->Precio);
+                    return new Vehiculo($automovil->Id, $automovil->Marca, $automovil->Modelo, $automovil->Año, $automovil->Precio);
                 }
                 else
                 {
