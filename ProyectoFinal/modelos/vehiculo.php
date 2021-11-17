@@ -1,7 +1,12 @@
 <?php
-    class Vehiculo{
+    //Tranferimos los errores de MYSQL a exepciones PHP
+    //Si no se usa este codigo los errores de MYSQL no podran ser capturados como expeciones
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-        public $Id;
+    class Vehiculo
+    {
+
+        public $id;
         public $Marca;
         public $Modelo;
         public $Año;
@@ -9,7 +14,7 @@
 
         public function __construct($id, $marca, $modelo, $año, $precio)
         {
-            $this->Id = $id;
+            $this->id = $id;
             $this->Marca = $marca;
             $this->Modelo = $modelo;
             $this->Año = $año;
@@ -18,99 +23,115 @@
 
         public static function consultar()
         {
-            $listaVehiculos = [];
+            $listavehiculos = [];
             $conexion = BD::crearConexion();
-            $consulta = "SELECT * FROM automoviles";
-            if ($resultado = mysqli_query($conexion, $consulta)) 
-            {
-                while ($automovil= $resultado->fetch_object())
-                {
+            $consulta = "SELECT * FROM vehiculos";
 
-                    $listaVehiculos[] = new Vehiculo($automovil->ID, $automovil->Marca, $automovil->Modelo, $automovil->Año, $automovil->Precio);
-                }
+            try
+            {
+
+                $resultado = mysqli_query($conexion, $consulta);
+            }
+            catch(Exception $e){
+                //Guardamos el mensaje para el programador
+                guardarError($e->getMessage(), $e->getLine() ,$e->getFile());
+                //Lanzamos un mensaje para el usuario
+                throw new DatabaseExeption(" No se puedo obtener los datos de los vehiculos");
             }
 
-            return $listaVehiculos;
+            //Obtener la lista de usuarios 
+            while ($vehiculo= $resultado->fetch_object()) 
+            {
+
+                $listavehiculos[] = new Vehiculo($vehiculo->id, $vehiculo->Marca, $vehiculo->Modelo, $vehiculo->Año, $vehiculo->Precio);
+            }
+            
+            return $listavehiculos;
+            
         }
 
-        public static function borrar($id){
+        public static function borrar($id)
+        {
             $conexion = BD::crearConexion();
-            $query = "DELETE FROM automoviles WHERE id = '$id'";
+            $query = "DELETE FROM vehiculos WHERE id = '$id'";
             $exito = mysqli_query($conexion, $query);
 
-            if(!$exito)
-            {
-                echo "Hubo un error al eliminar el producto: ".mysqli_error($conexion);
+            if(!$exito){
+                echo "Hubo un error al eliminar el vehiculo: ".mysqli_error($conexion);
             }
         }
 
-        public static function editar($Id, $Marca,$Modelo, $Año, $Precio){
+        public static function editar($id, $marca, $modelo, $año, $precio)
+        {
             $conexion = BD::crearConexion();
-            $query = "UPDATE automoviles SET 
-                                Nombre ='$Marca', 
-                                Cantidad='$Modelo', 
-                                Año='$Año',
-                                Precio='$Precio'  
-                                WHERE ID = '$Id'";
+            $query = "UPDATE vehiculos SET 
+                                Marca ='$marca', 
+                                Modelo='$modelo',
+                                Año='$año', 
+                                Precio='$precio'  
+                                WHERE id = '$id'";
             $exito = mysqli_query($conexion, $query);
 
-            if(!$exito)
-            {
-                echo "Hubo un error al actualizar el producto: ".mysqli_error($conexion);
+            if(!$exito){
+                echo "Hubo un error al actualizar el vehiculo: ".mysqli_error($conexion);
             }
         }
 
-        
-
-        public static function buscar($Id)
+        public static function buscar($id)
         {
             //Obtenemos una conexion a la base de datos
             $conexion = BD::crearConexion();
             //Armamos la consulta que sera ejecutada en la base de datos
-            $query = "SELECT * FROM automoviles WHERE ID = '$Id' ";
-            //Ejecutamos la consulta
-            $resultado = mysqli_query($conexion, $query);
+            $query = "SELECT * FROM vehiculos WHERE id = '$id'";
 
-            //Vericamos que se halla ejecutado correctamente la consulta
-            if($resultado)
+            //Vericamos que se ejecute correctamente la consulta y en caso contrario, capturamos el error
+            try
             {
-                //Verificamos que halla encontrado un resultado
-                if (mysqli_num_rows($resultado) > 0)
-                {
-                    //Obtenemos el resultado como un objeto
-                    $automovil = $resultado->fetch_object();
+                $resultado = mysqli_query($conexion, $query);
+            }
+            catch(Exception $e)
+            {
+                //Guardamos el mensaje para el programador
+                guardarError($e->getMessage(), $e->getLine() ,$e->getFile());
+                //Lanzamos un mensaje para el usuario
+                throw new DatabaseExeption(" No se pudo obtener los datos del vehiculo");
+            }
 
-                    //Devolvemos un objeto del tipo Producto
-                    return new Vehiculo($automovil->Id, $automovil->Marca, $automovil->Modelo, $automovil->Año, $automovil->Precio);
-                }
-                else
-                {
-                    echo "El producto con ese ID no se encuentro";
-                }
-                
+            if (mysqli_num_rows($resultado) > 0)
+            {
+                //Obtenemos el resultado como un objeto
+                $vehiculo = $resultado->fetch_object();
+
+                return new Vehiculo($vehiculo->id, $vehiculo->Marca, $vehiculo->Modelo, $vehiculo->Año, $vehiculo->Precio);
             }
             else
             {
-                echo "Hubo un error al buscar el producto: ".mysqli_error($conexion);
+                throw new DatabaseExeption(" El vehiculo con ese ID no se encontro");
             }
+            
         }
 
         public static function registrar($marca, $modelo, $año, $precio)
-        {
-            
+        {            
             $conexion = BD::crearConexion();
 
             // Codigo SQL para insertar datos en la tabla personas 
-            $query = "INSERT INTO automoviles (Marca, Modelo, Año, Precio) values ('$marca', '$modelo', '$año', '$precio')";
-            $exito = mysqli_query($conexion, $query);
-            
-            if($exito)
+            $query = "INSERT INTO vehiculos (Marca, Modelo, Año, Precio) values ('$marca', '$modelo', '$año', '$precio')";
+            try
             {
-                echo "Se guardaron correctamente los datos";
+                $exito = mysqli_query($conexion, $query);
+
+                if($exito)
+                {
+                    echo "Se guardaron correctamente los datos";
+                }
             }
-            else
+            catch(Exception $e)
             {
-                echo "Hubo un error al guardar los datos ".mysqli_error($conexion);
+                //Guardamos el mensaje para el programador
+                guardarError($e->getMessage(), $e->getLine() ,$e->getFile());
+                //Lanzamos un mensaje para el usuario
+                throw new DatabaseExeption("hubo un error al guardar los datos");
             }
         }
     }

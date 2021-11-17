@@ -1,4 +1,4 @@
-<?php
+<?php 
     class BD{
 
         //atributo estatico donde guardaremos la conexion
@@ -12,13 +12,17 @@
             {
 
                 //Si no esta creada pasamos a crearla
-                self::$conexion = mysqli_connect("localhost","root", "", "vehiculos");
-
-                // Chequea la coneccion
-                if (!self::$conexion) 
-                {
-                    die("La conexion fallo: " . mysqli_connect_error());
+                try{
+                    self::$conexion = mysqli_connect("localhost","root", "", "vehiculos");
                 }
+                catch(Exception $e)
+                {
+                    //Guardamos el mensaje para el programador
+                    guardarError($e->getMessage(), $e->getLine() ,$e->getFile());
+                    //Lanzamos un mensaje para el usuario
+                    throw new DatabaseExeption(" No se pudo conectarnos a la base de datos");
+                }
+                
             }
 
             return self::$conexion;
