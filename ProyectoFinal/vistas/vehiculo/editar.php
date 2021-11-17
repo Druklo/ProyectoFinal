@@ -43,7 +43,7 @@
             <div class="mb-3">
               <label for="precio" class="form-label">Precio: </label>
               <input type="text"
-                class="form-control" name="precio" id="precio" value="<?php if (!empty($producto)) {echo $producto -> Precio ;} ?>" aria-describedby="helpId" placeholder="Precio del vehiculo">
+                class="form-control" name="precio" id="precio" value="<?php if (!empty($vehiculo)) {echo $vehiculo-> Precio ;} ?>" aria-describedby="helpId" placeholder="Precio del vehiculo">
             </div>
             
 
