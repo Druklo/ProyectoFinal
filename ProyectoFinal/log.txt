@@ -7,3 +7,15 @@ Error: Undefined variable $vehiculos. Linea: 11. Archivo: C:\xampp\htdocs\tup_ph
 Error: Undefined variable $vehiculos. Linea: 8. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\PF2\vistas\vehiculo\editar.php. 
 Error: Undefined variable $vehiculos. Linea: 8. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\PF2\vistas\vehiculo\editar.php. 
 Error: Undefined variable $vehiculos. Linea: 8. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\PF2\vistas\vehiculo\editar.php. 
+Error: Undefined variable $vehiculos. Linea: 57. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\navegacion.php. 
+Error: Undefined variable $vehiculos. Linea: 57. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\navegacion.php. 
+Error: Undefined variable $vehiculos. Linea: 57. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\navegacion.php. 
+Error: Undefined variable $vehiculos. Linea: 57. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\navegacion.php. 
+Error: Undefined variable $vehiculos. Linea: 57. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\navegacion.php. 
+Error: Undefined variable $vehiculos. Linea: 57. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\navegacion.php. 
+Error: Undefined variable $vehiculos. Linea: 57. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\navegacion.php. 
+Error: Undefined variable $vehiculos. Linea: 57. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\navegacion.php. 
+Error: Undefined variable $vehiculos. Linea: 57. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\navegacion.php. 
+Error: Undefined variable $vehiculos. Linea: 57. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\navegacion.php. 
+Error: Undefined variable $id. Linea: 66. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\navegacion.php. 
+Error: Undefined variable $id. Linea: 66. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\navegacion.php. 

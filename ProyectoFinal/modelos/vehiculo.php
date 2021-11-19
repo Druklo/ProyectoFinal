@@ -33,7 +33,7 @@
                 $resultado = mysqli_query($conexion, $consulta);
             }
             catch(Exception $e){
-                
+                //Guardamos el mensaje para el programador
                 guardarError($e->getMessage(), $e->getLine() ,$e->getFile());
                 //Lanzamos un mensaje para el usuario
                 throw new DatabaseExeption(" No se puedo obtener los datos de los vehiculos");
