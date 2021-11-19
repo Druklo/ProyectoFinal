@@ -1,13 +1,13 @@
-<div class="card">
+<!-- <div class="card">
     <div class="card-header">
-            Buscar por id
+            Buscar por ID
         <div class="mb-3">
             <input type="text"
-            class="form-control" name="id" id="id" aria-describedby="helpId" placeholder="Ingrese el id del vehiculo">
+            class="form-control" name="id" id="id" aria-describedby="helpId" placeholder="ID del vehiculo">
         </div>
-        <input name="" id="" class="btn btn-success" type="submit" value="Buscar">
+        <input name="" id="" class="btn btn-success"  type="submit" value="Buscar">
     </div>
-</div>
+</div> -->
 
 <div class="card" color="red">
     <div class="card-header">
@@ -17,7 +17,7 @@
         <form action="" method="post">
 
             <div class="mb-3">
-              <label for="id" class="form-label">Id: </label>
+              <label for="id" class="form-label">ID: </label>
               <input type="text"
                 class="form-control" name="id" value="<?php if (!empty($vehiculo)) {echo $vehiculo -> id ;} ?>" readonly id="id" aria-describedby="helpId" >
             </div>
@@ -43,12 +43,12 @@
             <div class="mb-3">
               <label for="precio" class="form-label">Precio: </label>
               <input type="text"
-                class="form-control" name="precio" id="precio" value="<?php if (!empty($producto)) {echo $producto -> Precio ;} ?>" aria-describedby="helpId" placeholder="Precio del vehiculo">
+                class="form-control" name="precio" id="precio" value="<?php if (!empty($vehiculo)) {echo $vehiculo -> Precio ;} ?>" aria-describedby="helpId" placeholder="Precio del vehiculo">
             </div>
             
 
-            <input name="" id="" class="btn btn-success" type="submit" value="Editar vehiculo">
-            <a href="index.php?accion=inicio" class="btn btn-primary">Cancelar</a>
+            <input name="" id="" class="btn btn-success" type="submit" value="Confirmar">
+            <a href="index.php?accion=inicio" class="btn btn-outline-danger">Cancelar</a>
         </form>
     </div>
 

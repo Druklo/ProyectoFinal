@@ -1,22 +1,9 @@
-Error: Table 'productos.vehiculos' doesn't exist. Linea: 32. Archivo: C:\xampp\htdocs\PHP\Clase_21\modelos\producto.php. 
-Error: Table 'productos.vehiculos' doesn't exist. Linea: 120. Archivo: C:\xampp\htdocs\PHP\Clase_21\modelos\producto.php. 
-Error: Table 'productos.vehiculos' doesn't exist. Linea: 120. Archivo: C:\xampp\htdocs\PHP\Clase_21\modelos\producto.php. 
-Error: Table 'productos.vehiculos' doesn't exist. Linea: 120. Archivo: C:\xampp\htdocs\PHP\Clase_21\modelos\producto.php. 
-Error: Table 'productos.vehiculos' doesn't exist. Linea: 120. Archivo: C:\xampp\htdocs\PHP\Clase_21\modelos\producto.php. 
-Error: Table 'productos.vehiculos' doesn't exist. Linea: 32. Archivo: C:\xampp\htdocs\PHP\Clase_21\modelos\producto.php. 
-Error: Undefined variable $vehiculos. Linea: 13. Archivo: C:\xampp\htdocs\PHP\Clase_21\vistas\vehiculo\inicio.php. 
-Error: Undefined variable $vehiculos. Linea: 13. Archivo: C:\xampp\htdocs\PHP\Clase_21\vistas\vehiculo\inicio.php. 
-Error: Undefined variable $vehiculos. Linea: 13. Archivo: C:\xampp\htdocs\PHP\Clase_21\vistas\vehiculo\inicio.php. 
-Error: Undefined variable $vehiculos. Linea: 13. Archivo: C:\xampp\htdocs\PHP\Clase_21\vistas\vehiculo\inicio.php. 
-Error: Undefined variable $vehiculo. Linea: 13. Archivo: C:\xampp\htdocs\PHP\Clase_21\vistas\vehiculo\inicio.php. 
-Error: Undefined variable $vehiculo. Linea: 13. Archivo: C:\xampp\htdocs\PHP\Clase_21\vistas\vehiculo\inicio.php. 
-Error: Undefined variable $vehiculo. Linea: 13. Archivo: C:\xampp\htdocs\PHP\Clase_21\vistas\vehiculo\inicio.php. 
-Error: Undefined variable $vehiculo. Linea: 13. Archivo: C:\xampp\htdocs\PHP\Clase_21\vistas\vehiculo\inicio.php. 
-Error: Undefined variable $vehiculo. Linea: 13. Archivo: C:\xampp\htdocs\PHP\Clase_21\vistas\vehiculo\inicio.php. 
-Error: include_once(vistas/vehiculo/inicio.php): Failed to open stream: No such file or directory. Linea: 40. Archivo: C:\xampp\htdocs\PHP\Clase_21\controladores\controlador_paginas.php. 
-Error: include_once(vistas/vehiculo/inicio.php): Failed to open stream: No such file or directory. Linea: 40. Archivo: C:\xampp\htdocs\PHP\Clase_21\controladores\controlador_paginas.php. 
-Error: include_once(vistas/vehiculo/registrar.php): Failed to open stream: No such file or directory. Linea: 69. Archivo: C:\xampp\htdocs\PHP\Clase_21\controladores\controlador_paginas.php. 
-Error: include_once(vistas/vehiculo/registrar.php): Failed to open stream: No such file or directory. Linea: 69. Archivo: C:\xampp\htdocs\PHP\Clase_21\controladores\controlador_paginas.php. 
-Error: include_once(vistas/vehiculo/editar.php): Failed to open stream: No such file or directory. Linea: 111. Archivo: C:\xampp\htdocs\PHP\Clase_21\controladores\controlador_paginas.php. 
-Error: include_once(vistas/vehiculo/registrar.php): Failed to open stream: No such file or directory. Linea: 69. Archivo: C:\xampp\htdocs\PHP\Clase_21\controladores\controlador_paginas.php. 
-Error: include_once(vistas/vehiculo/inicio.php): Failed to open stream: No such file or directory. Linea: 40. Archivo: C:\xampp\htdocs\PHP\Clase_21\controladores\controlador_paginas.php. 
+Error: Undefined variable $vehiculos. Linea: 9. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\PF2\vistas\vehiculo\editar.php. 
+Error: Undefined variable $vehiculos. Linea: 9. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\PF2\vistas\vehiculo\editar.php. 
+Error: Undefined variable $vehiculos. Linea: 9. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\PF2\vistas\vehiculo\editar.php. 
+Error: Undefined variable $vehiculos. Linea: 9. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\PF2\vistas\vehiculo\editar.php. 
+Error: Undefined variable $vehiculos. Linea: 9. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\PF2\vistas\vehiculo\editar.php. 
+Error: Undefined variable $vehiculos. Linea: 11. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\PF2\vistas\vehiculo\editar.php. 
+Error: Undefined variable $vehiculos. Linea: 8. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\PF2\vistas\vehiculo\editar.php. 
+Error: Undefined variable $vehiculos. Linea: 8. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\PF2\vistas\vehiculo\editar.php. 
+Error: Undefined variable $vehiculos. Linea: 8. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\PF2\vistas\vehiculo\editar.php. 

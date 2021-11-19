@@ -25,8 +25,8 @@
                 class="form-control" name="precio" id="precio" aria-describedby="helpId" placeholder="Precio del vehiculo">
             </div>
 
-            <input name="btn" id="" class="btn btn-success" type="submit" value="Agregar vehiculo">
-            <a href="index.php?accion=inicio" class="btn btn-primary">Cancelar</a>
+            <input name="btn" id="" class="btn btn-outline-success" type="submit" value="Registrar">
+            <a href="index.php?accion=inicio" class="btn btn-danger">Cancelar</a>
         </form>
     </div>
     

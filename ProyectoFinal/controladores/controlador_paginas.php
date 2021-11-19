@@ -31,6 +31,26 @@
 
         }
 
+        private function main()
+        {
+            try
+            {
+                return include_once "vistas/vehiculo/main.php";
+            }
+            catch(DatabaseExeption $e)
+            {
+                $error = $e->errorMessage();
+                return include_once "vistas/error.php";
+            }
+            //Esta la usamos para capturar cualquier otro error
+            catch (Exception $e)
+            {
+                $error = "se produjo un error al cargar la pagina principal";
+                return include_once "vistas/error.php";
+            }
+            
+        }
+
         //Carga de la vista inicio, a partir de los datos obtenidos de la base de datos
         private function inicio()
         {

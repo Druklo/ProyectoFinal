@@ -1,7 +1,7 @@
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>Id</th>
+            <th>ID</th>
             <th>Marca</th>
             <th>Modelo</th>
             <th>Cantidad</th>
@@ -19,7 +19,7 @@
             <td><?php echo $vehiculos->Precio ?></td>
             <td>
                 <div class="btn-group" role="group" aria-label="">
-                    <a href="index.php?accion=editar&id=<?php echo $vehiculos->id ?>" class="btn btn-info">Editar</a>
+                    <a href="index.php?accion=editar&id=<?php echo $vehiculos->id ?>" class="btn btn-outline-success">Editar</a>
                     <a href="index.php?accion=borrar&id=<?php echo $vehiculos->id ?>" class="btn btn-danger">Borrar</a>
                 </div>
             </td>
