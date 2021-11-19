@@ -19,3 +19,10 @@ Error: Undefined variable $vehiculos. Linea: 57. Archivo: C:\xampp\htdocs\tup_ph
 Error: Undefined variable $vehiculos. Linea: 57. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\navegacion.php. 
 Error: Undefined variable $id. Linea: 66. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\navegacion.php. 
 Error: Undefined variable $id. Linea: 66. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\navegacion.php. 
+Error: include_once(vistas/vehiculo/vistasPorModelo.php): Failed to open stream: No such file or directory. Linea: 81. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\controladores\controlador_paginas.php. 
+Error: Undefined property: ControladorPaginas::$tabla_db1. Linea: 4. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\vehiculo\vistaPorMarca.php. 
+Error: Undefined property: ControladorPaginas::$tabla_db1. Linea: 4. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\vehiculo\vistaPorMarca.php. 
+Error: Undefined property: ControladorPaginas::$tabla_db1. Linea: 18. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\vehiculo\vistaPorMarca.php. 
+Error: Undefined property: ControladorPaginas::$tabla_db1. Linea: 18. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\vehiculo\vistaPorMarca.php. 
+Error: Undefined property: ControladorPaginas::$tabla_db1. Linea: 18. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\vehiculo\vistaPorMarca.php. 
+Error: Undefined property: ControladorPaginas::$tabla_db1. Linea: 18. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\vehiculo\vistaPorMarca.php. 

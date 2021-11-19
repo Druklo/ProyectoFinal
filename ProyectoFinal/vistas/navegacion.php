@@ -43,7 +43,7 @@
         </div>
 
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" name="accion" value="" id="defaultCheck2" disabled>
+            <input class="form-check-input" type="checkbox" name="accion" value="vistaMarca" id="defaultCheck2">
             <label class="form-check-label" for="defaultCheck2"> MARCA </label>
         </div>
 

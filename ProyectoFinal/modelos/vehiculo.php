@@ -111,6 +111,28 @@
             
         }
 
+        public function buscarMarca($marca)
+        {
+            $vehiculos = [];
+            $consulta = "SELECT * FROM $this->tabla_db1 WHERE Marca LIKE '%$marca%'";
+            
+            if ($resultado = mysqli_query($this->conexion, $consulta)) 
+            {
+                //Obtener la lista de usuarios 
+                while ($vehiculo = $resultado->fetch_object()) 
+                {
+
+                    $vehiculos[] = new Vehiculo($vehiculo->Id, $vehiculo->Marca, $vehiculo->Modelo, $vehiculo->Anio, $vehiculo->Precio);
+                }
+            }
+            else
+            {
+                echo "Hubo un error al obtener los vehiculos:  ".mysqli_error($this->conexion);
+            }
+
+            return $vehiculos;
+        }
+
         public static function registrar($marca, $modelo, $año, $precio)
         {            
             $conexion = BD::crearConexion();
