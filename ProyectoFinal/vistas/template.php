@@ -11,7 +11,7 @@
 
     <!-- fuente google y CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Orelega+One&family=Original+Surfer&display=swap" rel="stylesheet">
-    <link rel="stylesheet"  href="/vistas/estilos.css">
+    <!-- <link rel="stylesheet"  href="vistas/estilos.css"> -->
   </head>
   <body>
   
