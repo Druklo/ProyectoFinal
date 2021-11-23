@@ -26,3 +26,7 @@ Error: Undefined property: ControladorPaginas::$tabla_db1. Linea: 18. Archivo: C
 Error: Undefined property: ControladorPaginas::$tabla_db1. Linea: 18. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\vehiculo\vistaPorMarca.php. 
 Error: Undefined property: ControladorPaginas::$tabla_db1. Linea: 18. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\vehiculo\vistaPorMarca.php. 
 Error: Undefined property: ControladorPaginas::$tabla_db1. Linea: 18. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\vistas\vehiculo\vistaPorMarca.php. 
+Error: Undefined array key "id". Linea: 80. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\controladores\controlador_paginas.php. 
+Error: Undefined array key "id". Linea: 80. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\controladores\controlador_paginas.php. 
+Error: Undefined array key "id". Linea: 80. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\controladores\controlador_paginas.php. 
+Error: Undefined array key "id". Linea: 80. Archivo: C:\xampp\htdocs\tup_php\ProyectoFinal\ProyectoFinal\ProyectoFinal\controladores\controlador_paginas.php. 

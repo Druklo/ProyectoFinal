@@ -76,9 +76,32 @@
         private function vistaMarca()
         {
             try
-            {
-                $vehiculo = Vehiculo::consultar();
+            {        
+                $marca = $_GET['id'];    
+                $vehiculo = Vehiculo::consultarPorMarca($marca);
                 return include_once "vistas/vehiculo/vistaPorMarca.php";
+            }
+            catch(DatabaseExeption $e)
+            {
+                $error = $e->errorMessage();
+                return include_once "vistas/error.php";
+            }
+            //Esta la usamos para capturar cualquier otro error
+            catch (Exception $e)
+            {
+                $error = "se produjo un error obtener los vehiculos";
+                return include_once "vistas/error.php";
+            }
+            
+        }
+
+        private function vistaModelo()
+        {
+            try
+            {        
+                $modelo = $_GET['id'];    
+                $vehiculo = Vehiculo::consultarPorModelo($modelo);
+                return include_once "vistas/vehiculo/vistaPorModelo.php";
             }
             catch(DatabaseExeption $e)
             {

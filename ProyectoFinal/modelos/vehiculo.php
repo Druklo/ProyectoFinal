@@ -50,6 +50,66 @@
             
         }
 
+        public static function consultarPorMarca($marca)
+        {
+            // $marca = $_POST['id'];
+            $listavehiculos = [];
+            $conexion = BD::crearConexion();
+            $consulta = "SELECT * FROM vehiculos WHERE Marca LIKE '%$marca%'";
+
+            try
+            {
+
+                $resultado = mysqli_query($conexion, $consulta);
+            }
+            catch(Exception $e){
+                //Guardamos el mensaje para el programador
+                guardarError($e->getMessage(), $e->getLine() ,$e->getFile());
+                //Lanzamos un mensaje para el usuario
+                throw new DatabaseExeption(" No se puedo obtener los datos de los vehiculos");
+            }
+
+            //Obtener la lista de usuarios 
+            while ($vehiculo= $resultado->fetch_object()) 
+            {
+
+                $listavehiculos[] = new Vehiculo($vehiculo->id, $vehiculo->Marca, $vehiculo->Modelo, $vehiculo->Año, $vehiculo->Precio);
+            }
+            
+            return $listavehiculos;
+            
+        }
+
+        public static function consultarPorModelo($modelo)
+        {
+            // $marca = $_POST['id'];
+            $listavehiculos = [];
+            $conexion = BD::crearConexion();
+            $consulta = "SELECT * FROM vehiculos WHERE Modelo LIKE '%$modelo%'";
+
+            try
+            {
+
+                $resultado = mysqli_query($conexion, $consulta);
+            }
+            catch(Exception $e){
+                //Guardamos el mensaje para el programador
+                guardarError($e->getMessage(), $e->getLine() ,$e->getFile());
+                //Lanzamos un mensaje para el usuario
+                throw new DatabaseExeption(" No se puedo obtener los datos de los vehiculos");
+            }
+
+            //Obtener la lista de usuarios 
+            while ($vehiculo= $resultado->fetch_object()) 
+            {
+
+                $listavehiculos[] = new Vehiculo($vehiculo->id, $vehiculo->Marca, $vehiculo->Modelo, $vehiculo->Año, $vehiculo->Precio);
+            }
+            
+            return $listavehiculos;
+            
+        }
+
         public static function borrar($id)
         {
             $conexion = BD::crearConexion();
