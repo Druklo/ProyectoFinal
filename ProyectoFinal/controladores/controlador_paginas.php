@@ -73,6 +73,48 @@
             
         }
 
+        private function vistaValor()
+        {
+            try
+            {
+                $vehiculo = Vehiculo::consultar();
+                return include_once "vistas/vehiculo/vistaPorValor.php";
+            }
+            catch(DatabaseExeption $e)
+            {
+                $error = $e->errorMessage();
+                return include_once "vistas/error.php";
+            }
+            //Esta la usamos para capturar cualquier otro error
+            catch (Exception $e)
+            {
+                $error = "se produjo un error obtener los vehiculos";
+                return include_once "vistas/error.php";
+            }
+            
+        }
+
+        private function vistaAntiguedad()
+        {
+            try
+            {
+                $vehiculo = Vehiculo::consultarPorMasAntiguo();
+                return include_once "vistas/vehiculo/vistaPorAntiguedad.php";
+            }
+            catch(DatabaseExeption $e)
+            {
+                $error = $e->errorMessage();
+                return include_once "vistas/error.php";
+            }
+            //Esta la usamos para capturar cualquier otro error
+            catch (Exception $e)
+            {
+                $error = "se produjo un error obtener los vehiculos";
+                return include_once "vistas/error.php";
+            }
+            
+        }
+
         private function vistaMarca()
         {
             try

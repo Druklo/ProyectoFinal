@@ -2,9 +2,6 @@
     <h1 class="text-center" >  CARS SHOP </h1> 
 </div>
 
-
-
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
   <div class="collapse navbar-collapse" id="navbarScroll">
@@ -18,22 +15,30 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="index.php?accion=inicio">Lista de vehiculos</a>
+        <a class="nav-link" href="index.php?accion=inicio">Total Vehiculos</a>
       </li>
 
-      <li class="nav-item dropdown">
+      <li class="nav-item">
+        <a class="nav-link" href="index.php?accion=vistaValor">Por Valor</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="index.php?accion=vistaAntiguedad">Por Antiguedad</a>
+      </li>
+
+      <!-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="" id="navbarScrollingDropdown" role="button" data-toggle="dropdown" aria-expanded="false"> Mostrar </a>
         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
         <li><a class="dropdown-item" href="index.php?accion=inicio">Total Vehiculos</a></li>
           <li><a class="dropdown-item" href="vistaPorValor.php">Por Valor</a></li>
           <li><a class="dropdown-item" href="vistaPorModelo.php">Por Antiguedad</a></li>
         </ul>
-      </li>  
+      </li>   -->
 
 
     </ul>
 
-    <form action="index.php" method="GET" class="d-flex">
+    <form action="index.php" method="GET" class="d-flex ">
    
         <input class="form-control mr-2" type="text" name="id" id="id" placeholder="BUSCAR VEHICULO" >
 

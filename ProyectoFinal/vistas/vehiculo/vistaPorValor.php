@@ -4,7 +4,7 @@
             <th>ID</th>
             <th>Marca</th>
             <th>Modelo</th>
-            <th>Año</th>
+            <th>Cantidad</th>
             <th>Precio</th>
             <th>Acciones</th>
         </tr>

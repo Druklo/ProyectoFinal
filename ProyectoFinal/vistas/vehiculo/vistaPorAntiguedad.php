@@ -1,10 +1,14 @@
+<div class="p-3 mb-2 bg-secondary text-white">
+    <h1 class="text-center" >Los 4 vehiculos mas antiguos </h1> 
+</div>
+
 <table class="table table-bordered">
     <thead>
         <tr>
             <th>ID</th>
             <th>Marca</th>
             <th>Modelo</th>
-            <th>Año</th>
+            <th>Cantidad</th>
             <th>Precio</th>
             <th>Acciones</th>
         </tr>
